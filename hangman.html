@@ -1,0 +1,72 @@
+<!--  Author:-Mayank Pratap Singh IT 2nd year,MNNIT  -->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hangman</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="css/hangman.css" rel="stylesheet" type="text/css">
+<script src="js/modernizr.js"></script>
+<script>
+
+  //Modernizr is a JavaScript library to detect extra features of a browser.It helps to give features in older browsers.I am using this to support my game in almost all browsers.
+
+  //Instead of loading JS files directly with html I am using Modernizr
+   
+  Modernizr.load(
+      
+    {
+         //load is a property of load method of Modernizr
+         //This simply loads required JS files
+
+         load: ['js/jquery.min.js','js/hangman.js'],
+
+         //complete is a property of load method that executes a function after all JS files have been loaded
+
+         complete: function(){
+            init();
+         }
+
+    }
+  
+  );  
+
+
+</script>
+</head>
+
+<body>
+
+<p id="header"><h1>Hangman</h1>
+
+
+<p id="warning">JavaScript must be enabled to play this game.</p>
+
+<div id="help"></div>
+<div id="helptext">
+    <h2>How to play hangman</h2>
+    <div id="close"></div>
+    <p>
+
+       Hangman is a word-guessing game. Click or tap New Game to display the letters of the alphabet and a row of dashes indicating the number of letters to be guessed. Click or tap a letter. If it's in the word, it replaces the dash(es). Each wrong guess results in a stroke being added to a gallows and its victim. Your role is to guess the word correctly before the victim meets his grisly fate.
+
+    </p>
+
+</div>
+
+<p id="loading">Game loading . . .
+</p>
+
+<canvas id="stage" width="200" height="200">Sorry,your browser needs to support canvas for this game</canvas>
+
+<div id="play">New Game</div>
+<div id="clear">Clear Score</div>
+
+<p id="word"></p>
+
+<div id="letters"></div>
+
+</body>
+
+
+</html>

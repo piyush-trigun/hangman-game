@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+body{
+
+    margin:0;
+    padding:0;
+    font-size:100%;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:bold;
+
+}
+
+h1{
+
+    text-align:center;
+    font-family:sans-serif;
+    color:#096;
+
+}
+
+
+/* This is new thing I learned, .js before a CSS id or class means that these properties are available when js(javaScript is enabled)
+   .no-js means if browser has javaScript disabled then these properties will act */ 
+
+.js #help{
+
+    width:40px;
+    height:40px;
+    position:absolute;
+    top:10px;
+    right:30px;
+    background-image:url(../images/icons.png);
+    /* Positioning image within div horizontally and vertically */
+    background-position:2px 2px;
+    background-repeat: no-repeat;
+    cursor:help;
+
+}
+
+.js #helptext{
+
+    display:none;
+    border:#CCC solid 10px;
+    border-radius:8px;
+    width:260px;
+    padding:10px;
+    position:fixed;
+    top:10px;
+    background-color:#fff;
+    z-index: 10;
+}
+
+#helptext h2{
+
+    margin-top:0;
+
+}
+
+#helptext p{
+
+    margin-bottom:0;
+}
+
+.js #close{
+
+    position:absolute;
+    width:40px;
+    height:40px;
+    top:-20px;   /* Just fancy way to position close button         */
+    right:-20px;
+    z-index:10;
+
+    background-image: url(../images/icons.png);
+    background-position:-48px 2px;
+    background-repeat: no-repeat;
+    cursor:pointer;  
+}
+
+#mask{
+
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.8);
+
+}
+
+.no-js #loading{
+
+    display:none;
+
+}
+
+.js #warning{
+
+    display:none;
+
+}
+
+#warning{
+
+    font-size:150%;
+    font-weight: bold;
+    color:#ff0;
+    text-align: center;
+
+}
+
+#loading{
+
+    font-size: 150%;
+    font-weight:bold;
+    color:#ff0;
+    text-align:center;
+
+}
+
+#play,#clear{
+
+   display:none;
+   width:140px;
+   padding:0.25em 0;
+   text-align:center;
+   margin:0.2em 0 0 13px;
+   font-size:120%;
+   cursor:pointer;
+   color:#fff;
+   background-color:#069;
+}
+
+#stage{
+
+    float:right;
+}
+
+#word{
+
+    font-weight:bold;
+    font-size:150%;
+    letter-spacing:0.25em;
+    margin:0.25em 0 0.4em 30px;
+}
+
+#letters{
+
+    width:40px;
+    margin:0 5px 5px 0;
+    padding:0.25em 0;
+    text-align:center;
+    font-weight:bold;
+    font-size:150%;
+    color:#fff;
+    background-color:#006;
+    float:left;
+}
+
+/* CSS3 media queries so that our web app works on mobile as well as Desktop  */
+
+@media only screen and (max-width: 399px) {
+    h1 {
+        margin-top: 0.2em;
+        margin-bottom: 0;
+        font-size: 150%;
+    }
+    #word {
+        text-align:center;
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 399px), only screen and (min-width: 530px) {
+    #letters {
+        width: 320px;
+    }
+    body {
+        max-width: 560px;
+        margin: 0 auto;
+    }
+}
+@media only screen and (min-width: 400px) and (max-width:439px) {
+    #letters {
+        width: 180px;
+    }
+}
+@media only screen and (min-width: 440px) and (max-width: 529px) {
+    #letters {
+        width: 225px;
+    }
+}
+@media only screen and (min-width: 700px) {
+    body {
+        max-width: 800px;
+    }
+    #stage {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+
